@@ -12,7 +12,11 @@
 @synthesize balance;
 
 - (BankAccount*) init{
-    return nil;
+    self = [super init];
+    
+    self.balance = 1;
+    
+    return self;
 }
 
 - (void) open:(NSString*)accountNumber{
