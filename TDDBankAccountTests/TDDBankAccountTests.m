@@ -6,27 +6,14 @@
 //  Copyright (c) 2013 QSoftVietNam. All rights reserved.
 //
 
-#import "TDDBankAccountTests.h"
+#import "Kiwi.h"
 
-@implementation TDDBankAccountTests
+SPEC_BEGIN(TestBackAccount)
 
-- (void)setUp
-{
-    [super setUp];
-    
-    // Set-up code here.
-}
+describe(@"Test Back Account class", ^{
+    it(@"1.", ^{
+        [[theValue(0) should] equal:theValue(0)];
+    });
+});
 
-- (void)tearDown
-{
-    // Tear-down code here.
-    
-    [super tearDown];
-}
-
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in TDDBankAccountTests");
-}
-
-@end
+SPEC_END
