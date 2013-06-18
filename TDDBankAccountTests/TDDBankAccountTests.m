@@ -8,11 +8,14 @@
 
 #import "Kiwi.h"
 
-SPEC_BEGIN(TestBackAccount)
+SPEC_BEGIN(TestBankAccount)
 
 describe(@"Test Back Account class", ^{
-    it(@"1.", ^{
-        [[theValue(0) should] equal:theValue(0)];
+    it(@"1. Mở được tài khoản mới, open (accountNumber), mở tài khoản mới với balance = 0.", ^{
+        BankAccount *ba = [[BackAccount alloc] init];
+        [ba open:@"1234567890"];
+        
+        [[theValue(ba.balance) should] equal:theValue(0)];
     });
 });
 
