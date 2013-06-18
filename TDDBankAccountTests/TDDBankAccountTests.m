@@ -13,9 +13,10 @@ SPEC_BEGIN(TestBankAccount)
 
 describe(@"Test Back Account class", ^{
     it(@"1. Mở được tài khoản mới, open (accountNumber), mở tài khoản mới với balance = 0.", ^{
-        BankAccount *ba = [[BackAccount alloc] init];
+        BankAccount *ba = [[BankAccount alloc] init];
         [ba open:@"1234567890"];
         
+        [ba shouldNotBeNil];
         [[theValue(ba.balance) should] equal:theValue(0)];
     });
 });

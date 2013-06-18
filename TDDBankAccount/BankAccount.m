@@ -11,6 +11,10 @@
 @implementation BankAccount
 @synthesize balance;
 
+- (BankAccount*) init{
+    return nil;
+}
+
 - (void) open:(NSString*)accountNumber{
 
 }
