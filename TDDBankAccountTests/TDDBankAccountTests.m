@@ -7,6 +7,7 @@
 //
 
 #import "Kiwi.h"
+#import "BankAccount.h"
 
 SPEC_BEGIN(TestBankAccount)
 
