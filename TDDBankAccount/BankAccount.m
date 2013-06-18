@@ -14,7 +14,7 @@
 - (BankAccount*) init{
     self = [super init];
     
-    self.balance = 1;
+    self.balance = 0;
     
     return self;
 }
