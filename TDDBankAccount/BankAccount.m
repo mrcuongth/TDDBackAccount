@@ -27,7 +27,10 @@
 }
 
 + (BankAccount*) getAccount:(NSString*)accountNumber{
-    return nil;
+    BankAccount *ba = [[BankAccount alloc] init];
+    ba.accountNumber = accountNumber;
+    
+    return ba;
 }
 
 @end
