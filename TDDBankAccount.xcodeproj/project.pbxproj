@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060C3E02177193D300BB1A22 /* BankAccountDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 060C3E01177193D300BB1A22 /* BankAccountDao.m */; };
 		06520B5E17703A22007ED3C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06520B5D17703A22007ED3C5 /* Foundation.framework */; };
 		06520B6D17703A22007ED3C5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06520B6C17703A22007ED3C5 /* SenTestingKit.framework */; };
 		06520B6F17703A22007ED3C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06520B6E17703A22007ED3C5 /* UIKit.framework */; };
@@ -41,6 +42,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		060C3E00177193D300BB1A22 /* BankAccountDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankAccountDao.h; sourceTree = "<group>"; };
+		060C3E01177193D300BB1A22 /* BankAccountDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankAccountDao.m; sourceTree = "<group>"; };
 		06520B5A17703A22007ED3C5 /* libTDDBankAccount.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTDDBankAccount.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		06520B5D17703A22007ED3C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		06520B6117703A22007ED3C5 /* TDDBankAccount-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDDBankAccount-Prefix.pch"; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				06520B6017703A22007ED3C5 /* Supporting Files */,
 				06520B8517703FC8007ED3C5 /* BankAccount.h */,
 				06520B8617703FC8007ED3C5 /* BankAccount.m */,
+				060C3E00177193D300BB1A22 /* BankAccountDao.h */,
+				060C3E01177193D300BB1A22 /* BankAccountDao.m */,
 			);
 			path = TDDBankAccount;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06520B8717703FC8007ED3C5 /* BankAccount.m in Sources */,
+				060C3E02177193D300BB1A22 /* BankAccountDao.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

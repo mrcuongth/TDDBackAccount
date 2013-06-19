@@ -14,5 +14,6 @@
 @property (nonatomic, retain) NSString *accountNumber;
 
 + (BankAccount*) open:(NSString*)accountNumber;
++ (BankAccount*) getAccount:(NSString*)accountNumber;
 
 @end

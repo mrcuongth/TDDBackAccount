@@ -26,4 +26,8 @@
     return ba;
 }
 
++ (BankAccount*) getAccount:(NSString*)accountNumber{
+    return nil;
+}
+
 @end
