@@ -20,6 +20,16 @@ describe(@"Test Back Account class", ^{
     
     it(@"2. Tài khoản có tính persistent. BankAccount.getAccount(accountNumber) cho phép lấy thông tin tài khoản có số tài khoản được cho làm tham số. Dùng mock của BankAccountDao cho nhiệm vụ tương tác với CSDL.", ^{
         
+        NSString *accountNumber = @"123";
+        BankAccount *ba = [[BankAccount alloc] init];
+        ba.accountNumber = accountNumber;
+        
+        BankAccountDao *badMock = [BankAccountDao mock];
+        [badMock stub:@selector(getAccount:) andReturn:ba];
+        
+        BankAccount *baGotFromDBWithAccountNumber = [BankAccount getAccount:accountNumber];
+        
+        [[baGotFromDBWithAccountNumber.accountNumber should] equal:accountNumber];
     });
 });
 
