@@ -11,7 +11,8 @@
 @interface BankAccount : NSObject
 
 @property (nonatomic, readwrite) float balance;
+@property (nonatomic, retain) NSString *accountNumber;
 
-- (void) open:(NSString*)accountNumber;
++ (BankAccount*) open:(NSString*)accountNumber;
 
 @end

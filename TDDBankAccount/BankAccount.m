@@ -9,7 +9,7 @@
 #import "BankAccount.h"
 
 @implementation BankAccount
-@synthesize balance;
+@synthesize balance, accountNumber;
 
 - (BankAccount*) init{
     self = [super init];
@@ -19,8 +19,11 @@
     return self;
 }
 
-- (void) open:(NSString*)accountNumber{
-
++ (BankAccount*) open:(NSString*)accountNumber{
+    BankAccount *ba = [[BankAccount alloc] init];
+    ba.accountNumber = accountNumber;
+    
+    return ba;
 }
 
 @end
