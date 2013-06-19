@@ -8,9 +8,19 @@
 
 #import "BankAccountDao.h"
 
+static BankAccountDao *instance;
 @implementation BankAccountDao
 
++ (BankAccountDao*) shareInstance{
+    if (!instance) {
+        instance = [[BankAccountDao alloc] init];
+    }
+    
+    return instance;
+}
+
 - (BankAccount*) getAccount:(NSString*)accountNumber{
+    // Do some thing with database to get a BankAccount with accountNumber;
     return nil;
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "BankAccount.h"
+#import "BankAccountDao.h"
 
 @implementation BankAccount
 @synthesize balance, accountNumber;
@@ -27,9 +28,7 @@
 }
 
 + (BankAccount*) getAccount:(NSString*)accountNumber{
-    BankAccount *ba = [[BankAccount alloc] init];
-    ba.accountNumber = accountNumber;
-    
+    BankAccount *ba = [[BankAccountDao shareInstance] getAccount:accountNumber];
     return ba;
 }
 

@@ -11,6 +11,7 @@
 @class BankAccount;
 @interface BankAccountDao : NSObject
 
++ (BankAccountDao*) shareInstance;
 - (BankAccount*) getAccount:(NSString*)accountNumber;
 
 @end
