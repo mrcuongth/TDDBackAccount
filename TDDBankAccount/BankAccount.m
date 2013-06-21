@@ -32,4 +32,42 @@
     return ba;
 }
 
++ (void) deposit:accountNumber withAmount:(NSNumber*)depositAmount description:(NSString*)description{
+    
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
