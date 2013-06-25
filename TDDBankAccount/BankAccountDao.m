@@ -7,6 +7,7 @@
 //
 
 #import "BankAccountDao.h"
+#import "BankAccount.h"
 
 static BankAccountDao *instance;
 @implementation BankAccountDao
@@ -19,13 +20,14 @@ static BankAccountDao *instance;
     return instance;
 }
 
-- (void) deposit:accountNumber withAmount:(NSNumber*)depositAmount{
-    
+- (BOOL) deposit:accountNumber withAmount:(NSNumber*)depositAmount{
+    return NO;
 }
 
 - (BankAccount*) getAccount:(NSString*)accountNumber{
     // Do some thing with database to get a BankAccount with accountNumber;
-    return nil;
+    BankAccount *ba = [[BankAccount alloc] init];
+    return ba;
 }
 
 @end

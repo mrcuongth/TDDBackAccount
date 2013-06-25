@@ -13,6 +13,6 @@
 
 + (BankAccountDao*) shareInstance;
 - (BankAccount*) getAccount:(NSString*)accountNumber;
-- (void) deposit:accountNumber withAmount:(NSNumber*)depositAmount;
+- (BOOL) deposit:accountNumber withAmount:(NSNumber*)depositAmount;
 
 @end

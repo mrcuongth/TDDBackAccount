@@ -41,12 +41,12 @@ describe(@"Test Back Account class", ^{
         
         BankAccountDao *badMock = [BankAccountDao shareInstance];
         [badMock stub:@selector(getAccount:) andReturn:baOriginal];
+        [badMock stub:@selector(deposit:withAmount:) andReturn:theValue(1)];
+        
+        [[badMock should] receive:@selector(deposit:withAmount:) andReturn:theValue(1) withArguments:accountNumber, depositAmount];
         
         [BankAccount deposit:accountNumber withAmount:depositAmount description:description];
-        
-        [[[BankAccountDao shareInstance] should] receive:@selector(deposit:withAmount:) andReturn:@1 withArguments:accountNumber, depositAmount];
-        [[theValue(baOriginal.balance) should] equal:theValue(originalAmount + [depositAmount floatValue])];
-
+        [[theValue(baOriginal.balance) should] equal:theValue(originalAmount + [depositAmount floatValue])];        
     });
 });
 
