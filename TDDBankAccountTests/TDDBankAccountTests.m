@@ -32,21 +32,21 @@ describe(@"Test Back Account class", ^{
     });
     
     it(@"3. BankAccount.deposit(accountNumber, amount, description) gửi thêm tiền vào tài khoản.", ^{
-        NSString *accountNumber = @"123";
+        NSString *accountNumber = [NSString nullMock];
         NSNumber *depositAmount = @100;
         NSString *description = @"Deposit amount of money to account number 123";
 
-        
-        
         BankAccount *baOriginal = [BankAccount getAccount:accountNumber];
         float originalAmount = baOriginal.balance;
         
+        BankAccountDao *badMock = [BankAccountDao shareInstance];
+        [badMock stub:@selector(getAccount:) andReturn:baOriginal];
+        
         [BankAccount deposit:accountNumber withAmount:depositAmount description:description];
         
+        [[[BankAccountDao shareInstance] should] receive:@selector(deposit:withAmount:) andReturn:@1 withArguments:accountNumber, depositAmount];
         [[theValue(baOriginal.balance) should] equal:theValue(originalAmount + [depositAmount floatValue])];
-        
-        BankAccount *bankAccountAfterDeposit = [BankAccount getAccount:accountNumber];
-        [[theValue(bankAccountAfterDeposit.balance) should] equal:theValue(originalAmount + [depositAmount floatValue])];
+
     });
 });
 

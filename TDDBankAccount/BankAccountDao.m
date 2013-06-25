@@ -19,6 +19,10 @@ static BankAccountDao *instance;
     return instance;
 }
 
+- (void) deposit:accountNumber withAmount:(NSNumber*)depositAmount{
+    
+}
+
 - (BankAccount*) getAccount:(NSString*)accountNumber{
     // Do some thing with database to get a BankAccount with accountNumber;
     return nil;
