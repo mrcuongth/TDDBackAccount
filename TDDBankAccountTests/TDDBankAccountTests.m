@@ -48,6 +48,21 @@ describe(@"Test Back Account class", ^{
         [BankAccount deposit:accountNumber withAmount:depositAmount description:description];
         [[theValue(baOriginal.balance) should] equal:theValue(originalAmount + [depositAmount floatValue])];        
     });
+    
+    //4. thông tin về một lần deposit được lưu lại trong CSDL dưới dạng (accountNumber, timestamp, amount, description). Trong đó timestamp là thời điểm deposit được thực hiện. Cần mock phần lấy giờ hiện tại để phục vụ cho việc test.
+    it(@"4.", ^{
+        NSString *accountNumber = [NSString nullMock];
+        NSNumber *depositAmount = @100;
+        NSString *description = @"Deposit amount of money to account number 123";
+        NSDate *date = [NSDate date];
+        [NSDate stub:@selector(date) andReturn:date];
+
+        DepositDao *depMock = [DepositDao shareInstance];
+        [[depMock should] receive:@selector(deposit:withAmount:timeStamp:des:) andReturn:theValue(1) withArguments:accountNumber, depositAmount, date, description];
+        
+        [BankAccount deposit:accountNumber withAmount:depositAmount description:description];
+    });
+
 });
 
 SPEC_END
