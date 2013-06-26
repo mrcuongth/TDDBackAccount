@@ -14,7 +14,12 @@ SPEC_BEGIN(TestBankAccount)
 
 describe(@"Test Back Account class", ^{
     it(@"1. Mở được tài khoản mới, open (accountNumber), mở tài khoản mới với balance = 0.", ^{
-        BankAccount *ba = [BankAccount open:@"1234567890"];
+        BankAccountDao *badMock = [BankAccountDao nullMock];
+        NSString *accountNumber = [NSString nullMock];
+        
+        [[badMock should] receive:@selector(open:) andReturn:theValue(1) withArguments:accountNumber];
+        
+        BankAccount *ba = [BankAccount open:accountNumber];
         [ba shouldNotBeNil];
         [[theValue(ba.balance) should] equal:theValue(0)];
     });
@@ -57,8 +62,8 @@ describe(@"Test Back Account class", ^{
         NSDate *date = [NSDate date];
         [NSDate stub:@selector(date) andReturn:date];
 
-        DepositDao *depMock = [DepositDao shareInstance];
-        [[depMock should] receive:@selector(deposit:withAmount:timeStamp:des:) andReturn:theValue(1) withArguments:accountNumber, depositAmount, date, description];
+//        DepositDao *depMock = [DepositDao shareInstance];
+//        [[depMock should] receive:@selector(deposit:withAmount:timeStamp:des:) andReturn:theValue(1) withArguments:accountNumber, depositAmount, date, description];
         
         [BankAccount deposit:accountNumber withAmount:depositAmount description:description];
     });
