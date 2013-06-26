@@ -30,4 +30,37 @@ static BankAccountDao *instance;
     return ba;
 }
 
+- (BOOL) open:accountNumber{
+    return NO;
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

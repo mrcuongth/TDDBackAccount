@@ -14,7 +14,9 @@ SPEC_BEGIN(TestBankAccount)
 
 describe(@"Test Back Account class", ^{
     it(@"1. Mở được tài khoản mới, open (accountNumber), mở tài khoản mới với balance = 0.", ^{
-        BankAccountDao *badMock = [BankAccountDao nullMock];
+        BankAccountDao *badMock = [BankAccountDao shareInstance];
+        [badMock stub:@selector(open:) andReturn:theValue(1)];
+        
         NSString *accountNumber = [NSString nullMock];
         
         [[badMock should] receive:@selector(open:) andReturn:theValue(1) withArguments:accountNumber];

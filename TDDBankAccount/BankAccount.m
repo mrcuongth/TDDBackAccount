@@ -21,8 +21,8 @@
 }
 
 + (BankAccount*) open:(NSString*)accountNumber{
-    BankAccount *ba = [[BankAccount alloc] init];
-    ba.accountNumber = accountNumber;
+    [[BankAccountDao shareInstance] open:accountNumber];
+    BankAccount *ba = [[BankAccountDao shareInstance] getAccount:accountNumber];
     
     return ba;
 }
