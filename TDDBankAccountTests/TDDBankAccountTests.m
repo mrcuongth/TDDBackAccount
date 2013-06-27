@@ -60,17 +60,17 @@ describe(@"Test Back Account class", ^{
     
     //4. thông tin về một lần deposit được lưu lại trong CSDL dưới dạng (accountNumber, timestamp, amount, description). Trong đó timestamp là thời điểm deposit được thực hiện. Cần mock phần lấy giờ hiện tại để phục vụ cho việc test.
     it(@"4.", ^{
-        NSString *accountNumber = [NSString mock];
-        NSNumber *depositAmount = [NSNumber mock];
-        NSString *description = [NSString mock];
+        NSString *accountNumber = [NSString nullMock];
+        NSNumber *depositAmount = [NSNumber nullMock];
+        NSString *description = [NSString nullMock];
         
         NSDate *date = [NSDate date];
         [NSDate stub:@selector(date) andReturn:date];
 
         BankAccountDao *badMock = [BankAccountDao shareInstance];
-        [badMock stub:@selector(logDeposit:withAmount:at:des:) andReturn:theValue(1)];
+        [badMock stub:@selector(logDeposit:withAmount:at:andDescription:) andReturn:theValue(YES)];
         
-        [[badMock should] receive:@selector(logDeposit:withAmount:at:des:) andReturn:theValue(1) withArguments:accountNumber, depositAmount, date, description];
+        [[badMock should] receive:@selector(logDeposit:withAmount:at:andDescription:) andReturn:theValue(YES) withArguments:accountNumber, depositAmount, date, description];
         
         [BankAccount deposit:accountNumber withAmount:depositAmount description:description];
     });

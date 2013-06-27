@@ -24,6 +24,11 @@ static BankAccountDao *instance;
     return NO;
 }
 
+- (BOOL) logDeposit:accountNumber withAmount:(NSNumber*)depositAmount at:(NSDate*)time andDescription:(NSString*)des{
+    return NO;
+}
+
+
 - (BankAccount*) getAccount:(NSString*)accountNumber{
     // Do some thing with database to get a BankAccount with accountNumber;
     BankAccount *ba = [[BankAccount alloc] init];

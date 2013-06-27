@@ -37,6 +37,7 @@
     ba.balance += [depositAmount floatValue];
     
     [[BankAccountDao shareInstance] deposit:accountNumber withAmount:depositAmount];
+    [[BankAccountDao shareInstance] logDeposit:accountNumber withAmount:depositAmount at:[NSDate date] andDescription:description];
 }
 
 @end

@@ -15,5 +15,6 @@
 - (BankAccount*) getAccount:(NSString*)accountNumber;
 - (BOOL) deposit:accountNumber withAmount:(NSNumber*)depositAmount;
 - (BOOL) open:accountNumber;
+- (BOOL) logDeposit:accountNumber withAmount:(NSNumber*)depositAmount at:(NSDate*)time andDescription:(NSString*)des;
 
 @end
