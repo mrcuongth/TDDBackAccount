@@ -34,7 +34,7 @@
 
 + (void) deposit:accountNumber withAmount:(NSNumber*)depositAmount description:(NSString*)description{
     BankAccount *ba = [[BankAccountDao shareInstance] getAccount:accountNumber];
-    ba.balance = 100;// [depositAmount floatValue];
+    ba.balance += [depositAmount floatValue];
     
     [[BankAccountDao shareInstance] deposit:accountNumber withAmount:depositAmount];
 }
