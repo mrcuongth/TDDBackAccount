@@ -27,12 +27,14 @@ describe(@"Test Back Account class", ^{
     });
     
     it(@"2. Tài khoản có tính persistent.", ^{
-        NSString *accountNumber = @"123";
+        NSString *accountNumber = [NSString nullMock];
         BankAccount *ba = [[BankAccount alloc] init];
         ba.accountNumber = accountNumber;
         
         BankAccountDao *badMock = [BankAccountDao shareInstance];
         [badMock stub:@selector(getAccount:) andReturn:ba];
+        
+        [[badMock should] receive:@selector(getAccount:) andReturn:ba withArguments:accountNumber];
         
         BankAccount *baGotFromDBWithAccountNumber = [BankAccount getAccount:accountNumber];
         [[baGotFromDBWithAccountNumber.accountNumber should] equal:accountNumber];
