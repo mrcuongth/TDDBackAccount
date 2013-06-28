@@ -74,6 +74,25 @@ describe(@"Test Back Account class", ^{
         
         [BankAccount deposit:accountNumber withAmount:depositAmount description:description];
     });
+    
+    //5. BankAccount.withdraw(accountNumber, amount, description) rút tiền khỏi tài khoản. kết quả là số tiền trong tài khoản (balance) giảm đi một lượng bằng amount
+    it(@"5. ", ^{
+        NSString *accountNumber = [NSString nullMock];
+        NSNumber *withdrawAmmount = @100;
+        NSString *description = [NSString nullMock];
+
+        BankAccount *baOriginal = [BankAccount getAccount:accountNumber];
+        float originalAmount = baOriginal.balance;
+        
+        BankAccountDao *badMock = [BankAccountDao shareInstance];
+        [badMock stub:@selector(getAccount:) andReturn:baOriginal];
+        
+        [[badMock should] receive:@selector(withDraw:withAmount:) andReturn:theValue(1) withArguments:accountNumber, withdrawAmmount];
+        
+        [BankAccount withDraw:accountNumber withAmount:withdrawAmmount description:description];
+        [[theValue(baOriginal.balance) should] equal:theValue(originalAmount + [withdrawAmmount floatValue])];
+    });
+
 
 });
 
