@@ -92,6 +92,22 @@ describe(@"Test Back Account class", ^{
         [BankAccount withDraw:accountNumber withAmount:withdrawAmmount description:description];
         [[theValue(baOriginal.balance) should] equal:theValue(originalAmount + [withdrawAmmount floatValue])];
     });
+    
+    //6. thông tin về một lần withdraw được lưu lại trong CSDL dưới dạng (accountNumber, timestamp, amount, description), trong đó -amount là số tiền đã rút. Còn lại tương tự như deposit.
+    it(@"6.", ^{
+        NSString *accountNumber = [NSString nullMock];
+        NSNumber *withDrawAmount = [NSNumber nullMock];
+        NSString *description = [NSString nullMock];
+        
+        NSDate *date = [NSDate date];
+        [NSDate stub:@selector(date) andReturn:date];
+        
+        BankAccountDao *badMock = [BankAccountDao shareInstance];
+        
+        [[badMock should] receive:@selector(logWithDraw:withAmount:at:andDescription:) andReturn:theValue(YES) withArguments:accountNumber, withDrawAmount, date, description];
+        
+        [BankAccount withDraw:accountNumber withAmount:withDrawAmount description:description];
+    });
 });
 
 SPEC_END
