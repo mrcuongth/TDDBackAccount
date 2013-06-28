@@ -104,7 +104,7 @@ describe(@"Test Back Account class", ^{
         
         BankAccountDao *badMock = [BankAccountDao shareInstance];
         
-        [[badMock should] receive:@selector(logWithDraw:withAmount:at:andDescription:) andReturn:theValue(YES) withArguments:accountNumber, withDrawAmount, date, description];
+        [[badMock should] receive:@selector(logwithDraw:withAmount:at:andDescription:) andReturn:theValue(YES) withArguments:accountNumber, withDrawAmount, date, description];
         
         [BankAccount withDraw:accountNumber withAmount:withDrawAmount description:description];
     });

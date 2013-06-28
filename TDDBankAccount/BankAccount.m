@@ -45,6 +45,7 @@
     ba.balance += [widthDrawAmount floatValue];
     
     [[BankAccountDao shareInstance] withDraw:accountNumber withAmount:widthDrawAmount];
+    [[BankAccountDao shareInstance] logwithDraw:accountNumber withAmount:widthDrawAmount at:[NSDate date] andDescription:description];
 }
 
 @end

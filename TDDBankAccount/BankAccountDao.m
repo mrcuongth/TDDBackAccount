@@ -32,6 +32,9 @@ static BankAccountDao *instance;
     return NO;
 }
 
+- (BOOL) logwithDraw:accountNumber withAmount:(NSNumber*)withDrawAmount at:(NSDate*)time andDescription:(NSString*)des{
+    return NO;
+}
 
 - (BankAccount*) getAccount:(NSString*)accountNumber{
     // Do some thing with database to get a BankAccount with accountNumber;

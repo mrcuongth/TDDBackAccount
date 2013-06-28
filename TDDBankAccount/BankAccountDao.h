@@ -17,5 +17,6 @@
 - (BOOL) withDraw:accountNumber withAmount:(NSNumber*)depositAmount;
 - (BOOL) open:accountNumber;
 - (BOOL) logDeposit:accountNumber withAmount:(NSNumber*)depositAmount at:(NSDate*)time andDescription:(NSString*)des;
+- (BOOL) logwithDraw:accountNumber withAmount:(NSNumber*)withDrawAmount at:(NSDate*)time andDescription:(NSString*)des;
 
 @end
