@@ -41,7 +41,10 @@
 }
 
 + (void) withDraw:accountNumber withAmount:(NSNumber*)widthDrawAmount description:(NSString*)description{
+    BankAccount *ba = [[BankAccountDao shareInstance] getAccount:accountNumber];
+    ba.balance += [widthDrawAmount floatValue];
     
+    [[BankAccountDao shareInstance] withDraw:accountNumber withAmount:widthDrawAmount];
 }
 
 @end

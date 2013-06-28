@@ -92,8 +92,6 @@ describe(@"Test Back Account class", ^{
         [BankAccount withDraw:accountNumber withAmount:withdrawAmmount description:description];
         [[theValue(baOriginal.balance) should] equal:theValue(originalAmount + [withdrawAmmount floatValue])];
     });
-
-
 });
 
 SPEC_END
