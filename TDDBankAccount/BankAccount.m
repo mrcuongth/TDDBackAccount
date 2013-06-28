@@ -40,6 +40,10 @@
     [[BankAccountDao shareInstance] logDeposit:accountNumber withAmount:depositAmount at:[NSDate date] andDescription:description];
 }
 
++ (void) withDraw:accountNumber withAmount:(NSNumber*)widthDrawAmount description:(NSString*)description{
+    
+}
+
 @end
 
 

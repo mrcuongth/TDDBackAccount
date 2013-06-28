@@ -24,6 +24,10 @@ static BankAccountDao *instance;
     return NO;
 }
 
+- (BOOL) withDraw:accountNumber withAmount:(NSNumber*)depositAmount{
+    return NO;
+}
+
 - (BOOL) logDeposit:accountNumber withAmount:(NSNumber*)depositAmount at:(NSDate*)time andDescription:(NSString*)des{
     return NO;
 }
