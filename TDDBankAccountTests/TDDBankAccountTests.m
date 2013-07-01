@@ -108,6 +108,17 @@ describe(@"Test Back Account class", ^{
         
         [BankAccount withDraw:accountNumber withAmount:withDrawAmount description:description];
     });
+    
+    //7. lấy danh sách các giao dịch đã thực hiện đối với một tài khoản BankAccount.getTransactionsOccurred(accountNumber). Chỉ cần test tương tác với DAO, nghĩa là kiểm tra xem có gọi đúng hàm, đúng tham số hay không.
+    it(@"7.", ^{
+        NSString *accountNumber = [NSString nullMock];
+        BankAccountDao *badMock = [BankAccountDao shareInstance];
+        
+        [[badMock should] receive:@selector(getTransactionsOccurred:) andReturn:any() withArguments:accountNumber];
+        
+        [BankAccount getTransactionsOccurred:accountNumber];
+    });
+    
 });
 
 SPEC_END
