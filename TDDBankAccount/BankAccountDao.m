@@ -46,7 +46,7 @@ static BankAccountDao *instance;
     return NO;
 }
 
-- (NSArray*) getTransactionsOccurred:(NSString*) accountNumber{
+- (NSArray*) getTransactionsOccurred:(NSString*) accountNumber startTime:(NSDate*)startTime stopTime:(NSDate*)stopTime{
     return nil;
 }
 

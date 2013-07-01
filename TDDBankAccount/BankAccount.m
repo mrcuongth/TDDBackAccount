@@ -49,12 +49,13 @@
 }
 
 + (NSArray*) getTransactionsOccurred:(NSString*) accountNumber{
-    NSArray *result = [[BankAccountDao shareInstance] getTransactionsOccurred:accountNumber];
+    NSArray *result = [[BankAccountDao shareInstance] getTransactionsOccurred:accountNumber startTime:nil stopTime:nil];
     return result;
 }
 
 + (NSArray*) getTransactionsOccurred:(NSString*) accountNumber startTime:(NSDate*)startTime stopTime:(NSDate*)stopTime{
-    return nil;
+    NSArray *result = [[BankAccountDao shareInstance] getTransactionsOccurred:accountNumber startTime:startTime stopTime:stopTime];
+    return result;
 }
 
 @end
