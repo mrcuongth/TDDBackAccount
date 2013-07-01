@@ -46,6 +46,10 @@ static BankAccountDao *instance;
     return NO;
 }
 
+- (NSArray*) getTransactionsOccurred:(NSString*) accountNumber{
+    return nil;
+}
+
 @end
 
 

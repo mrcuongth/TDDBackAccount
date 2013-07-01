@@ -48,6 +48,10 @@
     [[BankAccountDao shareInstance] logwithDraw:accountNumber withAmount:widthDrawAmount at:[NSDate date] andDescription:description];
 }
 
++ (NSArray*) getTransactionsOccurred:(NSString*) accountNumber{
+    return nil;
+}
+
 @end
 
 

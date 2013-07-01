@@ -17,6 +17,6 @@
 + (BankAccount*) getAccount:(NSString*)accountNumber;
 + (void) deposit:accountNumber withAmount:(NSNumber*)depositAmount description:(NSString*)description;
 + (void) withDraw:accountNumber withAmount:(NSNumber*)widthDrawAmount description:(NSString*)description;
-
++ (NSArray*) getTransactionsOccurred:(NSString*) accountNumber;
 
 @end
