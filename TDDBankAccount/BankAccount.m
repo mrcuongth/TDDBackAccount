@@ -53,6 +53,10 @@
     return result;
 }
 
++ (NSArray*) getTransactionsOccurred:(NSString*) accountNumber startTime:(NSDate*)startTime stopTime:(NSDate*)stopTime{
+    return nil;
+}
+
 @end
 
 
