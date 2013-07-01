@@ -114,7 +114,7 @@ describe(@"Test Back Account class", ^{
         NSString *accountNumber = [NSString nullMock];
         BankAccountDao *badMock = [BankAccountDao shareInstance];
         
-        [[badMock should] receive:@selector(getTransactionsOccurred:startTime:stopTime:) andReturn:any() withArguments:accountNumber, nil, nil];
+        [[badMock should] receive:@selector(getTransactionsOccurred:startTime:stopTime:numberOfNewesetRecord:) andReturn:any() withArguments:accountNumber, nil, nil, nil];
         
         [BankAccount getTransactionsOccurred:accountNumber];
     });
@@ -126,9 +126,20 @@ describe(@"Test Back Account class", ^{
         NSDate *startTime = [NSDate nullMock];
         NSDate *stopTime = [NSDate nullMock];
         
-        [[badMock should] receive:@selector(getTransactionsOccurred:startTime:stopTime:) andReturn:any() withArguments:accountNumber, startTime, stopTime];
+        [[badMock should] receive:@selector(getTransactionsOccurred:startTime:stopTime:numberOfNewesetRecord:) andReturn:any() withArguments:accountNumber, startTime, stopTime, nil];
         
         [BankAccount getTransactionsOccurred:accountNumber startTime:startTime stopTime:stopTime];
+    });
+    
+//    9. lấy danh sách n giao dịch mới nhất đã được thực hiện. Chỉ cần test tương tác với DAO, nghĩa là kiểm tra xem có gọi đúng hàm, đúng tham số hay không.
+    it(@"9.", ^{
+        NSString *accountNumber = [NSString nullMock];
+        BankAccountDao *badMock = [BankAccountDao shareInstance];
+        NSNumber *numberOfNewestTransactions = [NSNumber nullMock];
+        
+        [[badMock should] receive:@selector(getTransactionsOccurred:startTime:stopTime:numberOfNewesetRecord:) andReturn:any() withArguments:accountNumber, nil, nil, numberOfNewestTransactions];
+        
+        [BankAccount getTransactionsOccurred:accountNumber numberOfNewestRecord:(NSNumber*)numberOfNewestRecord];
     });
 });
 
