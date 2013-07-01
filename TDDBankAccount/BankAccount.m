@@ -49,7 +49,8 @@
 }
 
 + (NSArray*) getTransactionsOccurred:(NSString*) accountNumber{
-    return nil;
+    NSArray *result = [[BankAccountDao shareInstance] getTransactionsOccurred:accountNumber];
+    return result;
 }
 
 @end
