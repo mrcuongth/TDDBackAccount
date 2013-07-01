@@ -49,17 +49,18 @@
 }
 
 + (NSArray*) getTransactionsOccurred:(NSString*) accountNumber{
-    NSArray *result = [[BankAccountDao shareInstance] getTransactionsOccurred:accountNumber startTime:nil stopTime:nil];
+    NSArray *result = [[BankAccountDao shareInstance] getTransactionsOccurred:accountNumber startTime:nil stopTime:nil numberOfNewesetRecord:nil];
     return result;
 }
 
 + (NSArray*) getTransactionsOccurred:(NSString*) accountNumber startTime:(NSDate*)startTime stopTime:(NSDate*)stopTime{
-    NSArray *result = [[BankAccountDao shareInstance] getTransactionsOccurred:accountNumber startTime:startTime stopTime:stopTime];
+    NSArray *result = [[BankAccountDao shareInstance] getTransactionsOccurred:accountNumber startTime:startTime stopTime:stopTime numberOfNewesetRecord:nil];
     return result;
 }
 
 + (NSArray*) getTransactionsOccurred:(NSString*) accountNumber numberOfNewestRecord:(NSNumber*)numberOfNewestRecord{
-    return nil;
+    NSArray *result = [[BankAccountDao shareInstance] getTransactionsOccurred:accountNumber startTime:nil stopTime:nil numberOfNewesetRecord:numberOfNewestRecord];
+    return result;
 }
 
 @end
