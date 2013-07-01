@@ -19,5 +19,6 @@
 + (void) withDraw:accountNumber withAmount:(NSNumber*)widthDrawAmount description:(NSString*)description;
 + (NSArray*) getTransactionsOccurred:(NSString*) accountNumber;
 + (NSArray*) getTransactionsOccurred:(NSString*) accountNumber startTime:(NSDate*)startTime stopTime:(NSDate*)stopTime;
++ (NSArray*) getTransactionsOccurred:(NSString*) accountNumber numberOfNewestRecord:(NSNumber*)numberOfNewestRecord;
 
 @end

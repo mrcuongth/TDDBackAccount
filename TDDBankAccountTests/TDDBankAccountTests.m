@@ -139,7 +139,7 @@ describe(@"Test Back Account class", ^{
         
         [[badMock should] receive:@selector(getTransactionsOccurred:startTime:stopTime:numberOfNewesetRecord:) andReturn:any() withArguments:accountNumber, nil, nil, numberOfNewestTransactions];
         
-        [BankAccount getTransactionsOccurred:accountNumber numberOfNewestRecord:(NSNumber*)numberOfNewestRecord];
+        [BankAccount getTransactionsOccurred:accountNumber numberOfNewestRecord:numberOfNewestTransactions];
     });
 });
 

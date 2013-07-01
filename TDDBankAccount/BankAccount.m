@@ -58,6 +58,10 @@
     return result;
 }
 
++ (NSArray*) getTransactionsOccurred:(NSString*) accountNumber numberOfNewestRecord:(NSNumber*)numberOfNewestRecord{
+    return nil;
+}
+
 @end
 
 
