@@ -13,11 +13,11 @@
 
 + (BankAccountDao*) shareInstance;
 - (BankAccount*) getAccount:(NSString*)accountNumber;
-- (BOOL) deposit:accountNumber withAmount:(NSNumber*)depositAmount;
-- (BOOL) withDraw:accountNumber withAmount:(NSNumber*)depositAmount;
-- (BOOL) open:accountNumber;
-- (BOOL) logDeposit:accountNumber withAmount:(NSNumber*)depositAmount at:(NSDate*)time andDescription:(NSString*)des;
-- (BOOL) logwithDraw:accountNumber withAmount:(NSNumber*)withDrawAmount at:(NSDate*)time andDescription:(NSString*)des;
+- (BOOL) deposit:(NSString*)accountNumber withAmount:(NSNumber*)depositAmount;
+- (BOOL) withDraw:(NSString*)accountNumber withAmount:(NSNumber*)depositAmount;
+- (BOOL) open:(BankAccount*)account;
+- (BOOL) logDeposit:(NSString*)accountNumber withAmount:(NSNumber*)depositAmount at:(NSDate*)time andDescription:(NSString*)des;
+- (BOOL) logwithDraw:(NSString*)accountNumber withAmount:(NSNumber*)withDrawAmount at:(NSDate*)time andDescription:(NSString*)des;
 - (NSArray*) getTransactionsOccurred:(NSString*) accountNumber startTime:(NSDate*)startTime stopTime:(NSDate*)stopTime numberOfNewesetRecord:(NSNumber*)numberOfNewesetRecord;
 
 @end

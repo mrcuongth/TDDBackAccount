@@ -12,11 +12,12 @@
 
 @property (nonatomic, readwrite) float balance;
 @property (nonatomic, retain) NSString *accountNumber;
+@property (nonatomic, retain) NSDate *openDate;
 
 + (BankAccount*) open:(NSString*)accountNumber;
 + (BankAccount*) getAccount:(NSString*)accountNumber;
-+ (void) deposit:accountNumber withAmount:(NSNumber*)depositAmount description:(NSString*)description;
-+ (void) withDraw:accountNumber withAmount:(NSNumber*)widthDrawAmount description:(NSString*)description;
++ (void) deposit:(NSString*)accountNumber withAmount:(NSNumber*)depositAmount description:(NSString*)description;
++ (void) withDraw:(NSString*)accountNumber withAmount:(NSNumber*)widthDrawAmount description:(NSString*)description;
 + (NSArray*) getTransactionsOccurred:(NSString*) accountNumber;
 + (NSArray*) getTransactionsOccurred:(NSString*) accountNumber startTime:(NSDate*)startTime stopTime:(NSDate*)stopTime;
 + (NSArray*) getTransactionsOccurred:(NSString*) accountNumber numberOfNewestRecord:(NSNumber*)numberOfNewestRecord;

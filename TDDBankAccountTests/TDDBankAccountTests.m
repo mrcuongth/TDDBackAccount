@@ -14,12 +14,18 @@ SPEC_BEGIN(TestBankAccount)
 
 describe(@"Test Back Account class", ^{
     it(@"1. Mở được tài khoản mới, open (accountNumber), mở tài khoản mới với balance = 0.", ^{
-        BankAccountDao *badMock = [BankAccountDao shareInstance];
-        [badMock stub:@selector(open:) andReturn:theValue(1)];
+        BankAccountDao *badMock = [BankAccountDao nullMock];
+        [badMock stub:@selector(open:) andReturn:any()];
         
         NSString *accountNumber = [NSString nullMock];
+        NSDate *date = [NSDate nullMock];        
         
-        [[badMock should] receive:@selector(open:) andReturn:theValue(1) withArguments:accountNumber];
+        KWCaptureSpy *spy = [badMock captureArgument:@selector(open:) atIndex:0];
+        BankAccount *bankAccount = spy.argument;
+        [[bankAccount.accountNumber should] equal:accountNumber];
+        [[bankAccount.openDate should] equal:date];
+        
+        [[badMock should] receive:@selector(open:) andReturn:any()];
         
         BankAccount *ba = [BankAccount open:accountNumber];
         [ba shouldNotBeNil];
@@ -119,7 +125,7 @@ describe(@"Test Back Account class", ^{
         [BankAccount getTransactionsOccurred:accountNumber];
     });
     
-//    8. lấy danh sách các giao dịch đã được thực hiện trong một khoảng thời gian startTime <= t < stopTime. BankAccount.getTransactionsOccurred(accountNumber, startTime, stopTime). Chỉ cần test tương tác với DAO, nghĩa là kiểm tra xem có gọi đúng hàm, đúng tham số hay không.
+    //8. lấy danh sách các giao dịch đã được thực hiện trong một khoảng thời gian startTime <= t < stopTime. BankAccount.getTransactionsOccurred(accountNumber, startTime, stopTime). Chỉ cần test tương tác với DAO, nghĩa là kiểm tra xem có gọi đúng hàm, đúng tham số hay không.
     it(@"8.", ^{
         NSString *accountNumber = [NSString nullMock];
         BankAccountDao *badMock = [BankAccountDao shareInstance];
@@ -131,7 +137,7 @@ describe(@"Test Back Account class", ^{
         [BankAccount getTransactionsOccurred:accountNumber startTime:startTime stopTime:stopTime];
     });
     
-//    9. lấy danh sách n giao dịch mới nhất đã được thực hiện. Chỉ cần test tương tác với DAO, nghĩa là kiểm tra xem có gọi đúng hàm, đúng tham số hay không.
+    //9. lấy danh sách n giao dịch mới nhất đã được thực hiện. Chỉ cần test tương tác với DAO, nghĩa là kiểm tra xem có gọi đúng hàm, đúng tham số hay không.
     it(@"9.", ^{
         NSString *accountNumber = [NSString nullMock];
         BankAccountDao *badMock = [BankAccountDao shareInstance];
@@ -140,6 +146,11 @@ describe(@"Test Back Account class", ^{
         [[badMock should] receive:@selector(getTransactionsOccurred:startTime:stopTime:numberOfNewesetRecord:) andReturn:any() withArguments:accountNumber, nil, nil, numberOfNewestTransactions];
         
         [BankAccount getTransactionsOccurred:accountNumber numberOfNewestRecord:numberOfNewestTransactions];
+    });
+    
+    //10. Khi mở tài khoản mới, cần lưu vào CSDL timestamp của việc mở tài khoản. Lưu ý là bước này đòi hỏi phải sửa lại tất cả các test có dính líu đến mở tài khoản. Nên nghĩ đến việc refactor để sử dụng các hàm tiện ích phục vụ việc setup môi trường test.
+    it(@"10.", ^{
+        
     });
 });
 

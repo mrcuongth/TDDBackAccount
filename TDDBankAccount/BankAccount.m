@@ -10,7 +10,7 @@
 #import "BankAccountDao.h"
 
 @implementation BankAccount
-@synthesize balance, accountNumber;
+@synthesize balance, accountNumber, openDate;
 
 - (BankAccount*) init{
     self = [super init];
@@ -21,10 +21,13 @@
 }
 
 + (BankAccount*) open:(NSString*)accountNumber{
-    [[BankAccountDao shareInstance] open:accountNumber];
-    BankAccount *ba = [[BankAccountDao shareInstance] getAccount:accountNumber];
+    BankAccount *account = [[BankAccount alloc] init];
+    account.accountNumber = accountNumber;
+    account.openDate = [NSDate date];
     
-    return ba;
+    [[BankAccountDao shareInstance] open:account];
+
+    return account;
 }
 
 + (BankAccount*) getAccount:(NSString*)accountNumber{
@@ -32,7 +35,7 @@
     return ba;
 }
 
-+ (void) deposit:accountNumber withAmount:(NSNumber*)depositAmount description:(NSString*)description{
++ (void) deposit:(NSString*)accountNumber withAmount:(NSNumber*)depositAmount description:(NSString*)description{
     BankAccount *ba = [[BankAccountDao shareInstance] getAccount:accountNumber];
     ba.balance += [depositAmount floatValue];
     
@@ -40,7 +43,7 @@
     [[BankAccountDao shareInstance] logDeposit:accountNumber withAmount:depositAmount at:[NSDate date] andDescription:description];
 }
 
-+ (void) withDraw:accountNumber withAmount:(NSNumber*)widthDrawAmount description:(NSString*)description{
++ (void) withDraw:(NSString*)accountNumber withAmount:(NSNumber*)widthDrawAmount description:(NSString*)description{
     BankAccount *ba = [[BankAccountDao shareInstance] getAccount:accountNumber];
     ba.balance += [widthDrawAmount floatValue];
     

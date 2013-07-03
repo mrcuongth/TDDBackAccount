@@ -20,19 +20,19 @@ static BankAccountDao *instance;
     return instance;
 }
 
-- (BOOL) deposit:accountNumber withAmount:(NSNumber*)depositAmount{
+- (BOOL) deposit:(NSString*)accountNumber withAmount:(NSNumber*)depositAmount{
     return NO;
 }
 
-- (BOOL) withDraw:accountNumber withAmount:(NSNumber*)depositAmount{
+- (BOOL) withDraw:(NSString*)accountNumber withAmount:(NSNumber*)depositAmount{
     return NO;
 }
 
-- (BOOL) logDeposit:accountNumber withAmount:(NSNumber*)depositAmount at:(NSDate*)time andDescription:(NSString*)des{
+- (BOOL) logDeposit:(NSString*)accountNumber withAmount:(NSNumber*)depositAmount at:(NSDate*)time andDescription:(NSString*)des{
     return NO;
 }
 
-- (BOOL) logwithDraw:accountNumber withAmount:(NSNumber*)withDrawAmount at:(NSDate*)time andDescription:(NSString*)des{
+- (BOOL) logwithDraw:(NSString*)accountNumber withAmount:(NSNumber*)withDrawAmount at:(NSDate*)time andDescription:(NSString*)des{
     return NO;
 }
 
@@ -42,7 +42,7 @@ static BankAccountDao *instance;
     return ba;
 }
 
-- (BOOL) open:accountNumber{
+- (BOOL) open:(BankAccount*)account{
     return NO;
 }
 
