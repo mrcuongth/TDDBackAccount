@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		060C3E02177193D300BB1A22 /* BankAccountDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 060C3E01177193D300BB1A22 /* BankAccountDao.m */; };
 		061A653F1786A3F900E5D1C2 /* TDDBankAccountTest2.m in Sources */ = {isa = PBXBuildFile; fileRef = 061A653E1786A3F900E5D1C2 /* TDDBankAccountTest2.m */; };
+		061A65421786A64200E5D1C2 /* BankAccount2.m in Sources */ = {isa = PBXBuildFile; fileRef = 061A65411786A64200E5D1C2 /* BankAccount2.m */; };
 		06520B5E17703A22007ED3C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06520B5D17703A22007ED3C5 /* Foundation.framework */; };
 		06520B6D17703A22007ED3C5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06520B6C17703A22007ED3C5 /* SenTestingKit.framework */; };
 		06520B6F17703A22007ED3C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06520B6E17703A22007ED3C5 /* UIKit.framework */; };
@@ -46,6 +47,8 @@
 		060C3E00177193D300BB1A22 /* BankAccountDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankAccountDao.h; sourceTree = "<group>"; };
 		060C3E01177193D300BB1A22 /* BankAccountDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankAccountDao.m; sourceTree = "<group>"; };
 		061A653E1786A3F900E5D1C2 /* TDDBankAccountTest2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDDBankAccountTest2.m; path = TDDBankAccountTests/TDDBankAccountTest2.m; sourceTree = SOURCE_ROOT; };
+		061A65401786A64200E5D1C2 /* BankAccount2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankAccount2.h; sourceTree = "<group>"; };
+		061A65411786A64200E5D1C2 /* BankAccount2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankAccount2.m; sourceTree = "<group>"; };
 		06520B5A17703A22007ED3C5 /* libTDDBankAccount.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTDDBankAccount.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		06520B5D17703A22007ED3C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		06520B6117703A22007ED3C5 /* TDDBankAccount-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDDBankAccount-Prefix.pch"; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				061A653E1786A3F900E5D1C2 /* TDDBankAccountTest2.m */,
+				061A65401786A64200E5D1C2 /* BankAccount2.h */,
+				061A65411786A64200E5D1C2 /* BankAccount2.m */,
 			);
 			name = BankAccountRound2;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 			files = (
 				06520B8717703FC8007ED3C5 /* BankAccount.m in Sources */,
 				060C3E02177193D300BB1A22 /* BankAccountDao.m in Sources */,
+				061A65421786A64200E5D1C2 /* BankAccount2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

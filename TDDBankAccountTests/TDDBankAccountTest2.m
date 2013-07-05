@@ -7,6 +7,7 @@
 //
 
 #import "Kiwi.h"
+#import "BankAccount2.h"
 
 SPEC_BEGIN(BankAccountTest2)
 
@@ -16,7 +17,7 @@ describe(@"Test Bank Account Round 2", ^{
         
         BankAccount2 *ba = [BankAccount2 open:accountNumber];
         [ba shouldNotBeNil];
-        [[ba.balance should] equal:@0];        
+        [[ba.balance should] equal:@0];
     });
 });
 
