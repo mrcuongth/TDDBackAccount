@@ -16,7 +16,6 @@ describe(@"Test Bank Account Round 2", ^{
     it(@"1. Open Account", ^{
         NSString *accountNumber = [NSString nullMock];
         
-        
         [[BankAccountDao2 should] receive:@selector(saveBankAccount:) andReturn:any() withArguments:any()];
 
         BankAccount2 *ba = [BankAccount2 open:accountNumber];
@@ -35,6 +34,13 @@ describe(@"Test Bank Account Round 2", ^{
         BankAccount2 *ba = [BankAccount2 getAccount:accountNumber];        
         [ba shouldNotBeNil];
         [[ba.accountNumber should] equal:accountNumber];
+    });
+    
+    it(@"3. Deposit", ^{
+        NSString *accountNumber = [NSString nullMock];
+        NSNumber *number = @10;
+        
+        
     });
 });
 
