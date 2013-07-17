@@ -17,5 +17,7 @@
 
 + (BankAccount2*) open:(NSString*) accountNumber;
 + (BankAccount2*) getAccount:(NSString*) accountNumber;
++ (void) deposit:(NSString*)accountNumber withAmount:(NSNumber*)depositAmount description:(NSString*)description;
+
 
 @end

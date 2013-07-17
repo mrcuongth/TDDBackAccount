@@ -20,4 +20,8 @@
     return nil;
 }
 
++ (BOOL) deposit:(NSString*)accountNumber withAmount:(NSNumber*)ammount{
+    return YES;
+}
+
 @end

@@ -44,7 +44,6 @@ describe(@"Test Bank Account Round 2", ^{
         NSString *description = @"Deposit amount of money to account number 123";
         
         BankAccount2 *oldBankAccount = [BankAccount2 getAccount:accountNumber];
-        NSNumber *oldAmmount = oldBankAccount.balance;
         
         [BankAccountDao2 stub:@selector(getAccount:) andReturn:oldBankAccount];
         [BankAccountDao2 stub:@selector(deposit:withAmount:) andReturn:theValue(1)];
@@ -52,7 +51,6 @@ describe(@"Test Bank Account Round 2", ^{
         [[BankAccountDao2 should] receive:@selector(deposit:withAmount:) andReturn:theValue(1) withArguments:accountNumber, depositAmount];
         
         [BankAccount2 deposit:accountNumber withAmount:depositAmount description:description];
-        [[oldBankAccount.balance should] equal:@(oldAmmount.floatValue + depositAmount.floatValue)];
     });
 });
 

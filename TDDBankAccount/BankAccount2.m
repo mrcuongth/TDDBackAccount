@@ -31,4 +31,47 @@
     return [BankAccountDao2 getAccount:accountNumber];
 }
 
++ (void) deposit:(NSString*)accountNumber withAmount:(NSNumber*)depositAmount description:(NSString*)description{
+    [BankAccountDao2 deposit:accountNumber withAmount:depositAmount];
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

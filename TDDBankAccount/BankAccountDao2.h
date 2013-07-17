@@ -13,5 +13,6 @@
 
 + (BOOL) saveBankAccount:(BankAccount2*)ba;
 + (BankAccount2*) getAccount:(NSString*)accountNumber;
++ (BOOL) deposit:(NSString*)accountNumber withAmount:(NSNumber*)ammount;
 
 @end
