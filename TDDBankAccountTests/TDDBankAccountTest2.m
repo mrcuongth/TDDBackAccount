@@ -36,11 +36,23 @@ describe(@"Test Bank Account Round 2", ^{
         [[ba.accountNumber should] equal:accountNumber];
     });
     
+    //3. BankAccount.deposit(accountNumber, amount, description) gửi thêm tiền vào tài khoản. Kết quả là số tiền trong tài khoản (balance) tăng thêm một lượng bằng amount.
     it(@"3. Deposit", ^{
         NSString *accountNumber = [NSString nullMock];
-        NSNumber *number = @10;
+        NSNumber *depositAmount = @10;
         
+        NSString *description = @"Deposit amount of money to account number 123";
         
+        BankAccount2 *oldBankAccount = [BankAccount2 getAccount:accountNumber];
+        NSNumber *oldAmmount = oldBankAccount.balance;
+        
+        [BankAccountDao2 stub:@selector(getAccount:) andReturn:oldBankAccount];
+        [BankAccountDao2 stub:@selector(deposit:withAmount:) andReturn:theValue(1)];
+        
+        [[BankAccountDao2 should] receive:@selector(deposit:withAmount:) andReturn:theValue(1) withArguments:accountNumber, depositAmount];
+        
+        [BankAccount2 deposit:accountNumber withAmount:depositAmount description:description];
+        [[oldBankAccount.balance should] equal:@(oldAmmount.floatValue + depositAmount.floatValue)];
     });
 });
 

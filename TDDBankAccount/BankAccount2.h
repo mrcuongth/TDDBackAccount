@@ -15,9 +15,6 @@
 
 - (BankAccount2*) initWithAccountNumber:(NSString*) _accountNumber;
 
-
-
-
 + (BankAccount2*) open:(NSString*) accountNumber;
 + (BankAccount2*) getAccount:(NSString*) accountNumber;
 
