@@ -33,6 +33,7 @@
 
 + (void) deposit:(NSString*)accountNumber withAmount:(NSNumber*)depositAmount description:(NSString*)description{
     [BankAccountDao2 deposit:accountNumber withAmount:depositAmount];
+    [BankAccountDao2 logDeposit:accountNumber withAmount:depositAmount at:[NSDate date] andDescription:description];
 }
 
 @end
