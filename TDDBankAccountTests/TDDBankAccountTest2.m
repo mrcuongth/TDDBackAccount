@@ -53,7 +53,7 @@ describe(@"Test Bank Account Round 2", ^{
         [BankAccount2 deposit:accountNumber withAmount:depositAmount description:description];
     });
     
-//    4. thông tin về một lần deposit được lưu lại trong CSDL dưới dạng (accountNumber, timestamp, amount, description). Trong đó timestamp là thời điểm deposit được thực hiện. Cần mock phần lấy giờ hiện tại để phục vụ cho việc test.
+    //  4. thông tin về một lần deposit được lưu lại trong CSDL dưới dạng (accountNumber, timestamp, amount, description). Trong đó timestamp là thời điểm deposit được thực hiện. Cần mock phần lấy giờ hiện tại để phục vụ cho việc test.
     it(@"4. Log Deposit", ^{
         NSString *accountNumber = [NSString nullMock];
         NSNumber *depositAmount = @10;
@@ -71,6 +71,18 @@ describe(@"Test Bank Account Round 2", ^{
         [[BankAccountDao2 should] receive:@selector(logDeposit:withAmount:at:andDescription:) andReturn:theValue(YES) withArguments:accountNumber, depositAmount, currentDate, description];
         
         [BankAccount2 deposit:accountNumber withAmount:depositAmount description:description];        
+    });
+
+    //  5. BankAccount.withdraw(accountNumber, amount, description) rút tiền khỏi tài khoản. kết quả là số tiền trong tài khoản (balance) giảm đi một lượng bằng amount
+    it(@"5. Withdraw", ^{
+        NSString *accountNumber = [NSString nullMock];
+        NSString *description = [NSString nullMock];
+        
+        NSNumber *depositAmount = [NSNumber nullMock];
+        
+        [[BankAccountDao2 should] receive:@selector(withdraw:withAmount:) andReturn:theValue(1) withArguments:accountNumber, depositAmount];
+        
+        [BankAccount2 withdraw:accountNumber withAmount:depositAmount description:description];
     });
 
 });
