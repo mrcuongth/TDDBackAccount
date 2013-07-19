@@ -24,4 +24,9 @@
     return YES;
 }
 
++ (BOOL) logDeposit:(NSString*)accountNumber withAmount:(NSNumber*)depositAmount at:(NSDate*)time andDescription:(NSString*)des{
+    return NO;
+}
+
+
 @end
