@@ -78,11 +78,11 @@ describe(@"Test Bank Account Round 2", ^{
         NSString *accountNumber = [NSString nullMock];
         NSString *description = [NSString nullMock];
         
-        NSNumber *depositAmount = [NSNumber nullMock];
+        NSNumber *withDrawAmount = [NSNumber nullMock];
         
-        [[BankAccountDao2 should] receive:@selector(withdraw:withAmount:) andReturn:theValue(1) withArguments:accountNumber, depositAmount];
+        [[BankAccountDao2 should] receive:@selector(withDraw:withAmount:) andReturn:theValue(1) withArguments:accountNumber, withDrawAmount];
         
-        [BankAccount2 withdraw:accountNumber withAmount:depositAmount description:description];
+        [BankAccount2 withDraw:accountNumber withAmount:withDrawAmount description:description];
     });
 
 });

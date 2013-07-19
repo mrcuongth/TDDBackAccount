@@ -28,5 +28,9 @@
     return NO;
 }
 
++ (BOOL) withDraw:(NSString*)accountNumber withAmount:(NSNumber*)ammount{
+    return YES;
+}
+
 
 @end

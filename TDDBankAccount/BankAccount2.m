@@ -36,6 +36,10 @@
     [BankAccountDao2 logDeposit:accountNumber withAmount:depositAmount at:[NSDate date] andDescription:description];
 }
 
++ (void) withDraw:(NSString*)accountNumber withAmount:(NSNumber*)withDrawAmount description:(NSString*)description{
+    [BankAccountDao2 withDraw:accountNumber withAmount:withDrawAmount];
+}
+
 @end
 
 

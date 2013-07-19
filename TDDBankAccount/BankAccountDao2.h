@@ -16,4 +16,7 @@
 + (BOOL) deposit:(NSString*)accountNumber withAmount:(NSNumber*)ammount;
 + (BOOL) logDeposit:(NSString*)accountNumber withAmount:(NSNumber*)depositAmount at:(NSDate*)time andDescription:(NSString*)des;
 
++ (BOOL) withDraw:(NSString*)accountNumber withAmount:(NSNumber*)ammount;
+
+
 @end
