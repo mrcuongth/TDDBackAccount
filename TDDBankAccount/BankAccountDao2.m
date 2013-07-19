@@ -32,5 +32,9 @@
     return YES;
 }
 
++ (BOOL) logWithdraw:(NSString*)accountNumber withAmount:(NSNumber*)withdrawAmount at:(NSDate*)time andDescription:(NSString*)des{
+    return YES;
+}
+
 
 @end

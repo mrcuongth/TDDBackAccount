@@ -38,6 +38,7 @@
 
 + (void) withDraw:(NSString*)accountNumber withAmount:(NSNumber*)withDrawAmount description:(NSString*)description{
     [BankAccountDao2 withDraw:accountNumber withAmount:withDrawAmount];
+    [BankAccountDao2 logWithdraw:accountNumber withAmount:withDrawAmount at:[NSDate date] andDescription:description];
 }
 
 @end

@@ -85,6 +85,19 @@ describe(@"Test Bank Account Round 2", ^{
         [BankAccount2 withDraw:accountNumber withAmount:withDrawAmount description:description];
     });
 
+    // 6. thông tin về một lần withdraw được lưu lại trong CSDL dưới dạng (accountNumber, timestamp, amount, description), trong đó -amount là số tiền đã rút. Còn lại tương tự như deposit.
+    it(@"6. log withdraw", ^{
+        NSString *accountNumber = [NSString nullMock];
+        NSString *description = [NSString nullMock];
+        NSNumber *withDrawAmount = [NSNumber nullMock];
+        NSDate *currentDate = [NSDate date];
+        [NSDate stub:@selector(date) andReturn:currentDate];
+        
+        [[BankAccountDao2 should] receive:@selector(withDraw:withAmount:) andReturn:theValue(1) withArguments:accountNumber, withDrawAmount];
+        [[BankAccountDao2 should] receive:@selector(logWithdraw:withAmount:at:andDescription:) andReturn:theValue(YES) withArguments:accountNumber, withDrawAmount, currentDate, description];
+
+        [BankAccount2 withDraw:accountNumber withAmount:withDrawAmount description:description];
+    });
 });
 
 SPEC_END
