@@ -118,6 +118,16 @@ describe(@"Test Bank Account Round 2", ^{
         [BankAccount2 getTransactionsOccurred:accountNumber startTime:startTime stopTime:stopTime];
     });
 
+    //9. lấy danh sách n giao dịch mới nhất đã được thực hiện. Chỉ cần test tương tác với DAO, nghĩa là kiểm tra xem có gọi đúng hàm, đúng tham số hay không.
+    it(@"9.", ^{
+        NSString *accountNumber = [NSString nullMock];
+        NSNumber *numberOfNewestTransactions = [NSNumber nullMock];
+        
+        [[BankAccountDao2 should] receive:@selector(getTransactionsOccurred:startTime:stopTime:numberOfNewesetRecord:) andReturn:any() withArguments:accountNumber, nil, nil, numberOfNewestTransactions];
+        
+        [BankAccount2 getTransactionsOccurred:accountNumber numberOfNewestRecord:numberOfNewestTransactions];
+    });
+
 
 });
 
