@@ -12,6 +12,7 @@
 
 @property (nonatomic, readonly) NSNumber *balance;
 @property (nonatomic, readonly) NSString *accountNumber;
+@property (nonatomic, readonly) NSDate *openDate;
 
 - (BankAccount2*) initWithAccountNumber:(NSString*) _accountNumber;
 

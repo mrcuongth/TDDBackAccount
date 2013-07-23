@@ -10,12 +10,13 @@
 #import "BankAccountDao2.h"
 
 @implementation BankAccount2
-@synthesize balance, accountNumber;
+@synthesize balance, accountNumber, openDate;
 
 - (BankAccount2*) initWithAccountNumber:(NSString*) _accountNumber{
     self = [super init];
     accountNumber = _accountNumber;
     balance = @0;
+    openDate = [NSDate date];
     
     return self;
 }
