@@ -106,6 +106,18 @@ describe(@"Test Bank Account Round 2", ^{
         
         [BankAccount2 getTransactionsOccurred:accountNumber];
     });
+    
+//    8. lấy danh sách các giao dịch đã được thực hiện trong một khoảng thời gian startTime <= t < stopTime. BankAccount.getTransactionsOccurred(accountNumber, startTime, stopTime). Chỉ cần test tương tác với DAO, nghĩa là kiểm tra xem có gọi đúng hàm, đúng tham số hay không.
+    it(@"8. ", ^{
+        NSString *accountNumber = [NSString nullMock];
+        NSDate *startTime = [NSDate nullMock];
+        NSDate *stopTime = [NSDate nullMock];
+        
+        [[BankAccountDao2 should] receive:@selector(getTransactionsOccurred:startTime:stopTime:numberOfNewesetRecord:) andReturn:any() withArguments:accountNumber, startTime, stopTime, nil];
+        
+        [BankAccount2 getTransactionsOccurred:accountNumber startTime:startTime stopTime:stopTime];
+    });
+
 
 });
 
