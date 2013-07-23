@@ -46,6 +46,12 @@
     return result;
 }
 
++ (NSArray*) getTransactionsOccurred:(NSString*) accountNumber startTime:(NSDate*)startTime stopTime:(NSDate*)stopTime{
+    NSArray *result = [BankAccountDao2 getTransactionsOccurred:accountNumber startTime:startTime stopTime:stopTime numberOfNewesetRecord:nil];
+    return result;
+}
+
+
 @end
 
 
