@@ -41,6 +41,11 @@
     [BankAccountDao2 logWithdraw:accountNumber withAmount:withDrawAmount at:[NSDate date] andDescription:description];
 }
 
++ (NSArray*) getTransactionsOccurred:(NSString*) accountNumber{
+    NSArray *result = [BankAccountDao2 getTransactionsOccurred:accountNumber startTime:nil stopTime:nil numberOfNewesetRecord:nil];
+    return result;
+}
+
 @end
 
 

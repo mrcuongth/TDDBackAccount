@@ -36,5 +36,10 @@
     return YES;
 }
 
++ (NSArray*) getTransactionsOccurred:(NSString*) accountNumber startTime:(NSDate*)startTime stopTime:(NSDate*)stopTime numberOfNewesetRecord:(NSNumber*)numberOfNewesetRecord{
+    return nil;
+}
+
+
 
 @end

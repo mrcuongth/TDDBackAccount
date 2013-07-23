@@ -101,8 +101,7 @@ describe(@"Test Bank Account Round 2", ^{
     
     // 7. lấy danh sách các giao dịch đã thực hiện đối với một tài khoản BankAccount.getTransactionsOccurred(accountNumber). Chỉ cần test tương tác với DAO, nghĩa là kiểm tra xem có gọi đúng hàm, đúng tham số hay không.
     it(@"7. ", ^{
-        NSString *accountNumber = [NSString nullMock];
-        
+        NSString *accountNumber = [NSString nullMock];        
         [[BankAccountDao2 should] receive:@selector(getTransactionsOccurred:startTime:stopTime:numberOfNewesetRecord:) andReturn:any() withArguments:accountNumber, nil, nil, nil];
         
         [BankAccount2 getTransactionsOccurred:accountNumber];

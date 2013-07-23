@@ -18,5 +18,6 @@
 
 + (BOOL) withDraw:(NSString*)accountNumber withAmount:(NSNumber*)ammount;
 + (BOOL) logWithdraw:(NSString*)accountNumber withAmount:(NSNumber*)withdrawAmount at:(NSDate*)time andDescription:(NSString*)des;
++ (NSArray*) getTransactionsOccurred:(NSString*) accountNumber startTime:(NSDate*)startTime stopTime:(NSDate*)stopTime numberOfNewesetRecord:(NSNumber*)numberOfNewesetRecord;
 
 @end
